@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+*{
+  margin: 0%;
+  padding: 0%;
+}
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #8EC5FC;
+  background: url('./kam.jpg');
+  font-family: 'Lexend Deca', sans-serif;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  
+}
+.container{
+  height: 700px;
+  width: 700px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+flex-direction: column;
+overflow: scroll;
+}
+.search-box{
+
+ height: 50px;
+ width: 80%;
+ margin: 30px;
+ padding: 20px;
+    outline: 0px;
+    border: 0px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+  
+
+}
+.result{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.word{
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  text-align: center;
+
+}
+
+.inp-word{
+  width: 60%;
+  background-color: white;
+  height: 30px;
+ border-top: 0px;
+ border-left: 0px;
+ border-right: 0px;
+ border-bottom: 2px solid rgb(204, 113, 204);
+ padding: 15px;
+ outline: none;
+
+}
+.searchBtn {
+  padding: 0.8em 1.8em;
+  height: 50px;
+  bottom: 10px;
+  border: 2px solid rgb(204, 113, 204);
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px;
+  transition: .3s;
+  z-index: 1;
+  font-family: inherit;
+  color: rgb(158, 30, 158);
+  margin-top: 20px;
+  margin-left: 10px;
+ }
+ 
+ .searchBtn::before {
+  content: '';
+  width: 0;
+  height: 300%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background:   rgb(204, 113, 204);
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+ }
+ 
+ .searchBtn:hover::before {
+  width: 105%;
+ }
+ 
+ .searchBtn:hover {
+  color: #111;
+ }
+
+ .word-details{
+padding: 10px;
+display: flex;
+    justify-content: center;
+ }
+ .word-examples{
+    padding: 10px;
+
+    
+
+ }
+ .details{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+.head{
+  padding-left: 20px;
+  display: flex;
+  justify-content: center;
+}
+.input-word{
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+

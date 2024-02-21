@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    
+</head>
+<body>
+
+ 
+
+    <div class="container">
+        <div class="search-box">
+<input type="text" placeholder="Write Your Dish Here.....!!" class="inp-word">
+<button class="searchBtn">Search</button>
+        </div>
+        <div class="result">
+         
+               
+          
+        </div>
+    </div>
+</body>
+ <script>
+    const url = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
+const result = document.querySelector(".result");
+const btn = document.querySelector(".searchBtn");
+
+btn.addEventListener('click', async () => {
+    let inpword = document.querySelector(".inp-word").value;
+    const response = await fetch(url + inpword);
+
+    if (response.ok) {
+        const data = await response.json();
+        console.log(data);
+
+        if (data.meals) { 
+            result.innerHTML = `
+                      <div class="word">
+                <h3 class="input-word">${data.meals[0].strMeal}</h3>
+            </div>
+            <div class="details">
+                <img src="${data.meals[0].strMealThumb}" alt="Meal Image" width="300px" height="200px">
+                
+            </div>
+            <h3 class="head"> ${data.meals[0].strArea}</h3>
+       
+            <div class="other-details">
+                <p class="word-examples">INSTRUCTION:${data.meals[0].strInstructions}</p>
+            </div>
+            `;
+        } else {
+            result.innerHTML = "<p>No meals found</p>";
+        }
+    } else {
+        console.error("Failed to fetch data");
+        result.innerHTML = "<p>Error fetching data</p>";
+    }
+});
+
+</script> 
+</html>
